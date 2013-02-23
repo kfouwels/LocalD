@@ -12,22 +12,23 @@ namespace LocalD
 {
 	public partial class MainPage : PhoneApplicationPage
 	{
-		// Constructor
 		public MainPage()
 		{
 			InitializeComponent();
-
-			// Set the data context of the listbox control to the sample data
 			DataContext = App.ViewModel;
 		}
 
-		// Load data for the ViewModel Items
 		protected override void OnNavigatedTo(NavigationEventArgs e)
 		{
 			if (!App.ViewModel.IsDataLoaded)
 			{
 				App.ViewModel.LoadData();
 			}
+		}
+
+		private void ApplicationBarIconButton_Settings_OnClick(object sender, EventArgs e)
+		{
+			NavigationService.Navigate(new Uri("/Pages/Settings.xaml", UriKind.Relative));
 		}
 	}
 }

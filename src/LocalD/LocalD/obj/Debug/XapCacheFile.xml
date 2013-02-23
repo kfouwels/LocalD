@@ -1,12 +1,14 @@
-﻿<xapCache source="H:\User1\DriveDump\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\LocalD_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="23/02/2013 00:14:48">
-  <file source="H:\User1\DriveDump\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\obj\Debug\LocalD.dll" archivePath="LocalD.dll" lastWriteTime="23/02/2013 00:14:47" />
+﻿<xapCache source="H:\User1\DriveDump\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\LocalD_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="23/02/2013 00:39:34">
+  <file source="H:\User1\DriveDump\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\obj\Debug\LocalD.dll" archivePath="LocalD.dll" lastWriteTime="23/02/2013 00:39:33" />
   <file source="H:\User1\DriveDump\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Assets\AlignmentGrid.png" archivePath="Assets\AlignmentGrid.png" lastWriteTime="23/02/2013 00:14:36" />
+  <file source="H:\User1\DriveDump\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Assets\feature.settings.png" archivePath="Assets\feature.settings.png" lastWriteTime="23/02/2013 00:29:02" />
   <file source="H:\User1\DriveDump\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Assets\Tiles\FlipCycleTileLarge.png" archivePath="Assets\Tiles\FlipCycleTileLarge.png" lastWriteTime="23/02/2013 00:14:36" />
   <file source="H:\User1\DriveDump\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Assets\Tiles\FlipCycleTileSmall.png" archivePath="Assets\Tiles\FlipCycleTileSmall.png" lastWriteTime="23/02/2013 00:14:36" />
   <file source="H:\User1\DriveDump\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Assets\Tiles\IconicTileMediumLarge.png" archivePath="Assets\Tiles\IconicTileMediumLarge.png" lastWriteTime="23/02/2013 00:14:36" />
   <file source="H:\User1\DriveDump\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Assets\Tiles\IconicTileSmall.png" archivePath="Assets\Tiles\IconicTileSmall.png" lastWriteTime="23/02/2013 00:14:36" />
-  <file source="H:\User1\DriveDump\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="23/02/2013 00:14:47" />
+  <file source="H:\User1\DriveDump\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="23/02/2013 00:39:16" />
   <file source="H:\User1\DriveDump\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\Assets\ApplicationIcon.png" archivePath="Assets\ApplicationIcon.png" lastWriteTime="23/02/2013 00:14:36" />
   <file source="H:\User1\DriveDump\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\Assets\Tiles\FlipCycleTileMedium.png" archivePath="Assets\Tiles\FlipCycleTileMedium.png" lastWriteTime="23/02/2013 00:14:36" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v8.0\Libraries\Microsoft.Phone.Controls.dll" archivePath="Microsoft.Phone.Controls.dll" lastWriteTime="27/12/2012 06:22:00" />
   <file source="H:\User1\DriveDump\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="23/02/2013 00:14:48" />
 </xapCache>
