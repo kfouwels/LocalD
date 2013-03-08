@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{5e2469a9-f2f1-4056-85f1-7d544d026cb9}" Title="LocalD" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="LocalD author" Description="Sample description" Publisher="LocalD" PublisherID="{fc1cf4cd-783f-4dd5-99c4-8e01184fe2a6}">
+  <App xmlns="" ProductID="{5e2469a9-f2f1-4056-85f1-7d544d026cb9}" Title="LocalD" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="LocalD author" Description="Social community schtuff" Publisher="LocalD" PublisherID="{fc1cf4cd-783f-4dd5-99c4-8e01184fe2a6}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
-      <Capability Name="ID_CAP_MEDIALIB_AUDIO" />
       <Capability Name="ID_CAP_MEDIALIB_PLAYBACK" />
-      <Capability Name="ID_CAP_SENSORS" />
       <Capability Name="ID_CAP_WEBBROWSERCOMPONENT" />
+      <Capability Name="ID_CAP_MEDIALIB_PHOTO" />
+      <Capability Name="ID_CAP_LOCATION" />
     </Capabilities>
     <Tasks>
-      <DefaultTask Name="_default" NavigationPage="MainPage.xaml" />
+      <DefaultTask Name="_default" NavigationPage="pages/UserLogin.xaml" />
     </Tasks>
     <Tokens>
       <PrimaryToken TokenID="LocalDToken" TaskName="_default">
