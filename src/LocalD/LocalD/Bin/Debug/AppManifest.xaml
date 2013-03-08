@@ -3,6 +3,7 @@
     <AssemblyPart x:Name="LocalD" Source="LocalD.dll" />
     <AssemblyPart x:Name="Coding4Fun.Toolkit.Controls" Source="Coding4Fun.Toolkit.Controls.dll" />
     <AssemblyPart x:Name="JeffWilcox.PhoneThemeManager" Source="JeffWilcox.PhoneThemeManager.dll" />
+    <AssemblyPart x:Name="LocalD.Services" Source="LocalD.Services.dll" />
     <AssemblyPart x:Name="Microsoft.Phone.Controls" Source="Microsoft.Phone.Controls.dll" />
   </Deployment.Parts>
 </Deployment>

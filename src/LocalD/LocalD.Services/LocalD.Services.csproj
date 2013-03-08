@@ -83,8 +83,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="IApi.cs" />
-    <Compile Include="Implementation\Api.cs" />
+    <Compile Include="ILogin.cs" />
+    <Compile Include="Implementation\Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
