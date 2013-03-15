@@ -85,3 +85,4 @@ namespace LocalD
             NavigationService.Navigate(new Uri("/Pages/Settings.xaml", UriKind.Relative));
         }
     }
+}
