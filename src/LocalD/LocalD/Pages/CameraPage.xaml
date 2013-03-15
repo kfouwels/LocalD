@@ -1,0 +1,39 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="LocalD.Pages.CameraPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Landscape" Orientation="Landscape"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <Grid Background="Black">
+        <Viewbox x:Name="CameraViewbox" Grid.Column="1" Grid.Row="0" Stretch="Uniform" Tap="CameraViewbox_Tap">
+            <Canvas x:Name="ViewfinderCanvas" Grid.Column="1" Grid.Row="0" MaxWidth="400" MaxHeight="300">
+                <Canvas.Background>
+                    <VideoBrush x:Name="ViewfinderBrush">
+                       
+                    </VideoBrush>
+                 </Canvas.Background>
+            </Canvas>
+        </Viewbox>
+    </Grid>
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Mode="Default" BackgroundColor="#2c3e50">
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="Flash On" Click="ApplicationBarMenuItem_FlashOn_OnClick"/>
+                <shell:ApplicationBarMenuItem Text="Flash Auto" Click="ApplicationBarMenuItem_FlashAuto_OnClick"/>
+                <shell:ApplicationBarMenuItem Text="Flash Off" Click="ApplicationBarMenuItem_FlashOff_OnClick"/>
+            </shell:ApplicationBar.MenuItems>
+            <shell:ApplicationBarIconButton IconUri="/Assets\AppBarIcons\questionmark.png" Text="Help!" Click="ApplicationBarIconButton_MainHelp_Tap"/>
+            <shell:ApplicationBarIconButton IconUri="/Assets\AppBarIcons\feature.camera.png" Text="Take photo" Click="ApplicationBarIconButton_Photo_Tap"/>
+            <shell:ApplicationBarIconButton IconUri="/Assets\AppBarIcons\feature.settings.png" Text="Settings"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+</phone:PhoneApplicationPage>

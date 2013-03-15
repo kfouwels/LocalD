@@ -94,6 +94,9 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="LocalizedStrings.cs" />
+    <Compile Include="Pages\CameraPage.xaml.cs">
+      <DependentUpon>CameraPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\MainHub.xaml.cs">
       <DependentUpon>MainHub.xaml</DependentUpon>
     </Compile>
@@ -117,6 +120,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="Pages\CameraPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\MainHub.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -142,14 +149,42 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\AppBarIcons\add.png" />
+    <Content Include="Assets\AppBarIcons\back.png" />
+    <Content Include="Assets\AppBarIcons\basecircle.png" />
+    <Content Include="Assets\AppBarIcons\cancel.png" />
+    <Content Include="Assets\AppBarIcons\check.png" />
+    <Content Include="Assets\AppBarIcons\close.png" />
+    <Content Include="Assets\AppBarIcons\delete.png" />
     <Content Include="Assets\AppBarIcons\download.png" />
     <Content Include="Assets\AppBarIcons\edit.png" />
+    <Content Include="Assets\AppBarIcons\favs.addto.png" />
+    <Content Include="Assets\AppBarIcons\favs.png" />
+    <Content Include="Assets\AppBarIcons\feature.alarm.png" />
+    <Content Include="Assets\AppBarIcons\feature.calendar.png" />
+    <Content Include="Assets\AppBarIcons\feature.camera.png" />
+    <Content Include="Assets\AppBarIcons\feature.email.png" />
+    <Content Include="Assets\AppBarIcons\feature.phone.png" />
     <Content Include="Assets\AppBarIcons\feature.search.png" />
+    <Content Include="Assets\AppBarIcons\feature.settings.png" />
+    <Content Include="Assets\AppBarIcons\feature.video.png" />
+    <Content Include="Assets\AppBarIcons\folder.png" />
+    <Content Include="Assets\AppBarIcons\like.png" />
+    <Content Include="Assets\AppBarIcons\microphone.png" />
+    <Content Include="Assets\AppBarIcons\minus.png" />
     <Content Include="Assets\AppBarIcons\new.png" />
     <Content Include="Assets\AppBarIcons\next.png" />
+    <Content Include="Assets\AppBarIcons\overflowdots.png" />
     <Content Include="Assets\AppBarIcons\questionmark.png" />
     <Content Include="Assets\AppBarIcons\refresh.png" />
+    <Content Include="Assets\AppBarIcons\save.png" />
+    <Content Include="Assets\AppBarIcons\share.png" />
+    <Content Include="Assets\AppBarIcons\stop.png" />
     <Content Include="Assets\AppBarIcons\sync.png" />
+    <Content Include="Assets\AppBarIcons\transport.ff.png" />
+    <Content Include="Assets\AppBarIcons\transport.pause.png" />
+    <Content Include="Assets\AppBarIcons\transport.play.png" />
+    <Content Include="Assets\AppBarIcons\transport.rew.png" />
     <Content Include="Assets\AppBarIcons\upload.png" />
     <Content Include="Assets\Spinner.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
@@ -159,7 +194,6 @@
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\AppBarIcons\feature.settings.png" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

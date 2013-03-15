@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
@@ -19,15 +20,9 @@ namespace LocalD
         public MainPage()
         {
             InitializeComponent();
-            DataContext = App.ViewModel;
-        }
 
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            if (!App.ViewModel.IsDataLoaded)
-            {
-                App.ViewModel.LoadData();
-            }
+            CameraButtons.ShutterKeyPressed += OnButtonFullPress;
+
             Status.Text = "Page loaded";
             Status.Text = "Checking if camera OK";
             if (PhotoCamera.IsCameraTypeSupported(CameraType.Primary))
@@ -36,55 +31,65 @@ namespace LocalD
                 myCam = new PhotoCamera(CameraType.Primary);
                 Status.Text = "Camera OK!";
 
-                //todo flash stuff
-                //flashode.Text = myCam.FlashMode.ToString();
-
                 Resolution.Text = (myCam.Resolution.Width + "x" + myCam.Resolution.Height);
                 ViewfinderCanvas.Height = myCam.Resolution.Height;
                 ViewfinderCanvas.Width = myCam.Resolution.Width;
 
                 ViewfinderBrush.SetSource(myCam);
                 //myCam.Initialized += cam_Initialized;
-                //myCam.CaptureCompleted += myCam_CaptureCompleted;
+                myCam.CaptureCompleted += myCam_CaptureCompleted;
             }
             else
             {
                 MessageBox.Show("A Camera is not available on this device.", "Error!", MessageBoxButton.OK);
                 Status.Text = "Camera ERROR!";
             }
-
         }
 
-        //private void myCam_CaptureCompleted(object sender, CameraOperationCompletedEventArgs e)
-        //{
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
 
-        //}
-
-        //private void cam_Initialized(object sender, CameraOperationCompletedEventArgs e)
-        //{
-        //    status.Text = "Camera initialised";
-        //}
-
-
-
-        private void ViewfinderCanvas_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        }
+        private void TakePhoto()
         {
             try
             {
                 myCam.CaptureImage();
-                Status.Text = "Capture ok!";
             }
             catch (Exception)
             {
                 MessageBox.Show("The camera couldn't take an image, please try again", "CaptureImage() failed",
                                 MessageBoxButton.OK);
-                Status.Text = "Capture failed";
             }
         }
+        private void ApplicationBarIconButton_Photo_OnClick(object sender, EventArgs e)
+        {
+            TakePhoto();
+        }
 
+        private void OnButtonFullPress(object sender, EventArgs e)
+        {
+            TakePhoto();
+        }
+        private void myCam_CaptureCompleted(object sender, CameraOperationCompletedEventArgs e)
+        {
+
+        }
         private void ApplicationBarIconButton_Settings_OnClick(object sender, EventArgs e)
         {
             NavigationService.Navigate(new Uri("/Pages/Settings.xaml", UriKind.Relative));
+        }
+
+        private void CameraBox_Ontap(object sender, GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Pages/CameraPage.xaml", UriKind.Relative));
+        }
+
+        private void ApplicationBarIconButton_MainHelp_OnClick(object sender, EventArgs e)
+        {
+            MessageBox.Show(
+                "Earth that was could no longer sustain our numbers, we were so many. We found a new solar system, dozens of planets and hundreds of moons. Each one terraformed, a process taking decades, to support human life, to be new Earths. The Central Planets formed the Alliance. Ruled by an interplanetary parliament, the Alliance was a beacon of civilization. The savage outer planets were not so enlightened and refused Alliance control. The war was devastating, but the Alliance's victory over the Independents ensured a safer universe. And now everyone can enjoy the comfort and enlightenment of our civilization. ",
+                "Help", MessageBoxButton.OK);
         }
     }
 }

@@ -43,10 +43,8 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-        </Style>
+        </Style>   
     </phone:PhoneApplicationPage.Resources>
-
-
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <phone:Panorama Title="LocalD" Background="#2980b9" Style="{StaticResource PanoramaStyle1}">
 
@@ -62,32 +60,30 @@
                         <RowDefinition Height="5"/>
                         <RowDefinition Height="15"/>
                     </Grid.RowDefinitions>
-
-                    <Viewbox Grid.Column="1" Grid.Row="0" Stretch="Uniform">
+                    
+                    <Viewbox x:Name="CameraViewbox" Grid.Column="1" Grid.Row="0" Stretch="Uniform" Tap="CameraBox_Ontap">
                         <Border BorderBrush="#2c3e50" BorderThickness="1">
-                        <Canvas x:Name="ViewfinderCanvas" Tap="ViewfinderCanvas_Tap" Grid.Column="1" Grid.Row="0" MaxWidth="300" MaxHeight="400">
-                            <Canvas.Background>
-                                <VideoBrush x:Name="ViewfinderBrush">
-                                    <VideoBrush.RelativeTransform>
-                                        <CompositeTransform x:Name="ViewfinderTransform"
+                            <Canvas x:Name="ViewfinderCanvas" Grid.Column="1" Grid.Row="0" MaxWidth="300" MaxHeight="400">
+                                <Canvas.Background>
+                                    <VideoBrush x:Name="ViewfinderBrush">
+                                        <VideoBrush.RelativeTransform>
+                                            <CompositeTransform x:Name="ViewfinderTransform"
                                                             CenterX="0.5"
                                                             CenterY="0.5"
                                                             Rotation="90"/>
-                                    </VideoBrush.RelativeTransform>
-                                </VideoBrush>
-                            </Canvas.Background>
-                        </Canvas>
+                                        </VideoBrush.RelativeTransform>
+                                    </VideoBrush>
+                                </Canvas.Background>
+                            </Canvas>
                         </Border>
                     </Viewbox>
                     <TextBlock Style="{StaticResource PhoneTextNormalStyle}" TextAlignment="Center" VerticalAlignment="Center" Grid.Column="1"  Margin="0" Grid.Row="1"
-                                   Text="Tap the screen to capture a photo."/>
+                                   Text="Tap the screen to expand viewfinder"/>
                     <Grid Grid.Row="4" Grid.Column="1">
                         <StackPanel Orientation="Horizontal"  Grid.Column="0" Height="18" VerticalAlignment="Bottom" HorizontalAlignment="Left">
                             <TextBlock x:Name="Status" FontSize="15" Text="not set"/>
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal"  Grid.Column="0" Height="18" VerticalAlignment="Bottom" HorizontalAlignment="Center">
-                            <TextBlock x:Name="flashode" FontSize="15" Text="?"/>
-                        </StackPanel>
+                        
                         <StackPanel Orientation="Horizontal"  Grid.Column="0" Height="18" VerticalAlignment="Bottom" HorizontalAlignment="Right">
                             <TextBlock x:Name="Resolution" FontSize="15" Text="0000x0000"/>
                         </StackPanel>
@@ -106,6 +102,8 @@
                 <shell:ApplicationBarMenuItem Text="Option2"/>
                 <shell:ApplicationBarMenuItem Text="Option3"/>
             </shell:ApplicationBar.MenuItems>
+            <shell:ApplicationBarIconButton IconUri="/Assets\AppBarIcons\questionmark.png" Text="Help!" Click="ApplicationBarIconButton_MainHelp_OnClick"/>
+            <shell:ApplicationBarIconButton IconUri="/Assets\AppBarIcons\feature.camera.png" Text="Take photo" Click="ApplicationBarIconButton_Photo_OnClick"/>
             <shell:ApplicationBarIconButton IconUri="/Assets\AppBarIcons\feature.settings.png" Text="Settings" Click="ApplicationBarIconButton_Settings_OnClick"/>
 
         </shell:ApplicationBar>
