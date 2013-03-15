@@ -50,20 +50,22 @@
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <phone:Panorama Title="LocalD" Background="#2980b9" Style="{StaticResource PanoramaStyle1}">
 
-            <phone:PanoramaItem Header="**Upload**">
-                <Grid>
+            <phone:PanoramaItem>
+                <Grid Margin="0,0,0,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="10"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="8*"/>
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="5"/>
                         <RowDefinition Height="15"/>
                     </Grid.RowDefinitions>
-                    <Viewbox Grid.Column="1" Grid.Row="0">
-                        <Canvas x:Name="ViewfinderCanvas" Tap="ViewfinderCanvas_Tap" Width="16" Height="9">
+
+                    <Viewbox Grid.Column="1" Grid.Row="0" Stretch="Uniform">
+                        <Border BorderBrush="#2c3e50" BorderThickness="1">
+                        <Canvas x:Name="ViewfinderCanvas" Tap="ViewfinderCanvas_Tap" Grid.Column="1" Grid.Row="0" MaxWidth="300" MaxHeight="400">
                             <Canvas.Background>
                                 <VideoBrush x:Name="ViewfinderBrush">
                                     <VideoBrush.RelativeTransform>
@@ -73,17 +75,18 @@
                                                             Rotation="90"/>
                                     </VideoBrush.RelativeTransform>
                                 </VideoBrush>
-                                
                             </Canvas.Background>
-                            
                         </Canvas>
+                        </Border>
                     </Viewbox>
                     <TextBlock Style="{StaticResource PhoneTextNormalStyle}" TextAlignment="Center" VerticalAlignment="Center" Grid.Column="1"  Margin="0" Grid.Row="1"
                                    Text="Tap the screen to capture a photo."/>
                     <Grid Grid.Row="4" Grid.Column="1">
                         <StackPanel Orientation="Horizontal"  Grid.Column="0" Height="18" VerticalAlignment="Bottom" HorizontalAlignment="Left">
-                            <TextBlock Text="STATUS:" FontSize="15" Margin="0,0,9,0"/>
                             <TextBlock x:Name="Status" FontSize="15" Text="not set"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal"  Grid.Column="0" Height="18" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                            <TextBlock x:Name="flashode" FontSize="15" Text="?"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal"  Grid.Column="0" Height="18" VerticalAlignment="Bottom" HorizontalAlignment="Right">
                             <TextBlock x:Name="Resolution" FontSize="15" Text="0000x0000"/>

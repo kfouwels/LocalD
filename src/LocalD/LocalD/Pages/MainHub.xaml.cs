@@ -36,6 +36,9 @@ namespace LocalD
                 myCam = new PhotoCamera(CameraType.Primary);
                 Status.Text = "Camera OK!";
 
+                //todo flash stuff
+                //flashode.Text = myCam.FlashMode.ToString();
+
                 Resolution.Text = (myCam.Resolution.Width + "x" + myCam.Resolution.Height);
                 ViewfinderCanvas.Height = myCam.Resolution.Height;
                 ViewfinderCanvas.Width = myCam.Resolution.Width;
@@ -43,7 +46,6 @@ namespace LocalD
                 ViewfinderBrush.SetSource(myCam);
                 //myCam.Initialized += cam_Initialized;
                 //myCam.CaptureCompleted += myCam_CaptureCompleted;
-
             }
             else
             {
@@ -67,17 +69,17 @@ namespace LocalD
 
         private void ViewfinderCanvas_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            //try
-            //{
-            //    myCam.CaptureImage();
-            //    status.Text = "Capture ok!";
-            //}
-            //catch (Exception)
-            //{
-            //    MessageBox.Show("The camera couldn't take an image, please try again", "CaptureImage() failed",
-            //                    MessageBoxButton.OK);
-            //    status.Text = "Capture failed";
-            //}
+            try
+            {
+                myCam.CaptureImage();
+                Status.Text = "Capture ok!";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("The camera couldn't take an image, please try again", "CaptureImage() failed",
+                                MessageBoxButton.OK);
+                Status.Text = "Capture failed";
+            }
         }
 
         private void ApplicationBarIconButton_Settings_OnClick(object sender, EventArgs e)
