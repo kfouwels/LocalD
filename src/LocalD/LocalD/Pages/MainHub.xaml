@@ -1,5 +1,4 @@
 ﻿<phone:PhoneApplicationPage
-    x:Class="LocalD.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
@@ -7,44 +6,106 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	xmlns:extracontrols="clr-namespace:Coding4Fun.Toolkit.Controls;assembly=Coding4Fun.Toolkit.Controls"
+    xmlns:Primitives="clr-namespace:Microsoft.Phone.Controls.Primitives;assembly=Microsoft.Phone"
+    x:Class="LocalD.MainPage"
     mc:Ignorable="d"
     d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
-    FontFamily="{StaticResource PhoneFontFamilyNormal}"
-    FontSize="{StaticResource PhoneFontSizeNormal}"
-    Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="False">
+    
+    <phone:PhoneApplicationPage.Resources>
+        <Style x:Key="PanoramaStyle1" TargetType="phone:Panorama">
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <Primitives:PanoramaPanel x:Name="panel"/>
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="phone:Panorama">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Primitives:PanningBackgroundLayer x:Name="BackgroundLayer" HorizontalAlignment="Left" Grid.RowSpan="2">
+                                <Border x:Name="background" Background="{TemplateBinding Background}"/>
+                            </Primitives:PanningBackgroundLayer>
+                            <Primitives:PanningTitleLayer x:Name="TitleLayer" CharacterSpacing="-35" ContentTemplate="{TemplateBinding TitleTemplate}" Content="{TemplateBinding Title}" FontSize="150" FontFamily="{StaticResource PhoneFontFamilyLight}" HorizontalAlignment="Left" Margin="10,-34,0,0" Grid.Row="0"/>
+                            <Primitives:PanningLayer x:Name="ItemsLayer" HorizontalAlignment="Left" Grid.Row="1">
+                                <ItemsPresenter x:Name="items"/>
+                            </Primitives:PanningLayer>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </phone:PhoneApplicationPage.Resources>
+
 
     <Grid x:Name="LayoutRoot" Background="Transparent">
-		
-        <phone:Panorama Title="LocalD">
+        <phone:Panorama Title="LocalD" Background="#2980b9" Style="{StaticResource PanoramaStyle1}">
+
+            <phone:PanoramaItem Header="**Upload**">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="15"/>
+                    </Grid.RowDefinitions>
+                    <Viewbox Grid.Column="1" Grid.Row="0">
+                        <Canvas x:Name="ViewfinderCanvas" Tap="ViewfinderCanvas_Tap" Width="16" Height="9">
+                            <Canvas.Background>
+                                <VideoBrush x:Name="ViewfinderBrush">
+                                    <VideoBrush.RelativeTransform>
+                                        <CompositeTransform x:Name="ViewfinderTransform"
+                                                            CenterX="0.5"
+                                                            CenterY="0.5"
+                                                            Rotation="90"/>
+                                    </VideoBrush.RelativeTransform>
+                                </VideoBrush>
+                                
+                            </Canvas.Background>
+                            
+                        </Canvas>
+                    </Viewbox>
+                    <TextBlock Style="{StaticResource PhoneTextNormalStyle}" TextAlignment="Center" VerticalAlignment="Center" Grid.Column="1"  Margin="0" Grid.Row="1"
+                                   Text="Tap the screen to capture a photo."/>
+                    <Grid Grid.Row="4" Grid.Column="1">
+                        <StackPanel Orientation="Horizontal"  Grid.Column="0" Height="17" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+                            <TextBlock Text="STATUS:" FontSize="15" Margin="0,0,9,0"/>
+                            <TextBlock x:Name="Status" FontSize="15" Text="not set"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal"  Grid.Column="0" Height="17" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                            <TextBlock x:Name="Resolution" FontSize="15" Text="0000x0000"/>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+            </phone:PanoramaItem>
             
-            <phone:Panorama.Background>
-                <ImageBrush ImageSource="/LocalD;component/Assets/Panorama[main]Background.png"/>
-            </phone:Panorama.Background>
-
-            <phone:PanoramaItem Header="Fluttershy">
-                
-            </phone:PanoramaItem>
-
-			<phone:PanoramaItem Header="Rainbowdash">
-				
-			</phone:PanoramaItem>
-
-			<phone:PanoramaItem Header="Applejack">
-               
-            </phone:PanoramaItem>
+            <phone:PanoramaItem Header="**Recent**" Orientation="Horizontal"/>
         </phone:Panorama>
-
     </Grid>
-	<phone:PhoneApplicationPage.ApplicationBar>
-		<shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Mode="Default">
-			<shell:ApplicationBarIconButton IconUri="/Assets\AppBarIcons\feature.settings.png" Text="Settings" Click="ApplicationBarIconButton_Settings_OnClick"/>
-			<shell:ApplicationBar.MenuItems>
-				<shell:ApplicationBarMenuItem Text="Yolo"/>
-				<shell:ApplicationBarMenuItem Text="Swag"/>
-				<shell:ApplicationBarMenuItem Text="YoloSwag"/>
-			</shell:ApplicationBar.MenuItems>
-		</shell:ApplicationBar>
-	</phone:PhoneApplicationPage.ApplicationBar>
+    
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Mode="Default" BackgroundColor="#2c3e50">
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="Option1"/>
+                <shell:ApplicationBarMenuItem Text="Option2"/>
+                <shell:ApplicationBarMenuItem Text="Option3"/>
+            </shell:ApplicationBar.MenuItems>
+            <shell:ApplicationBarIconButton IconUri="/Assets\AppBarIcons\feature.settings.png" Text="Settings" Click="ApplicationBarIconButton_Settings_OnClick"/>
+
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+    
 </phone:PhoneApplicationPage>

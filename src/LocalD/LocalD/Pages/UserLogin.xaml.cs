@@ -21,6 +21,7 @@ namespace LocalD.Pages
 
         private void UserSubmit_OnClick(object sender, RoutedEventArgs e)
         {
+            NavigationService.Navigate(new Uri("/Pages/MainHub.xaml", UriKind.Relative)); //DEBUG!
 
             //display processing circle
             Spinner.Visibility = Visibility.Visible;
@@ -31,11 +32,12 @@ namespace LocalD.Pages
             {
                 //ILogin testLogin = new Login();
                 //todo login shit
+                //todo prevent going back to this page
 
                 //DEBUG
-                MessageBox.Show("For now this is overriding the login system, as it does not yet exist", "DEBUG!!",
+                MessageBox.Show("For now this is overriding the login system", "DEBUG!!",
                                 MessageBoxButton.OK);
-                NavigationService.Navigate(new Uri("/Pages/MainHub.xaml"));
+                NavigationService.Navigate(new Uri("/Pages/MainHub.xaml", UriKind.Relative));
 
             }
             else

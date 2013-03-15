@@ -11,20 +11,21 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="False">
 
-    <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
-        <!--Pivot Control-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <SolidColorBrush Color="#2980b9"/>
+        </Grid.Background>
+        
         <phone:Pivot Title="LocalD: Settings">
-            <!--Pivot item one-->
-            <phone:PivotItem Header="Rainbows">
-                <Grid/>
+          
+            <phone:PivotItem Header="Page uno">
+                
             </phone:PivotItem>
 
-            <!--Pivot item two-->
-            <phone:PivotItem Header="Magic">
-                <Grid/>
+            <phone:PivotItem Header="Page dos">
+                
             </phone:PivotItem>
         </phone:Pivot>
     </Grid>

@@ -19,7 +19,7 @@ namespace LocalD.Pages
 		protected override void OnNavigatedTo(NavigationEventArgs e)
 		{
 
-			MessageBox.Show("This is all fillertext, yada yada yada, ponies are the master race of this universe",
+			MessageBox.Show("Yada Yada Yada",
 			                "Nothing to see here! [yet]", MessageBoxButton.OK);
 
 
