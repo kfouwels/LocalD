@@ -83,7 +83,9 @@
                         <StackPanel Orientation="Horizontal"  Grid.Column="0" Height="18" VerticalAlignment="Bottom" HorizontalAlignment="Left">
                             <TextBlock x:Name="Status" FontSize="15" Text="not set"/>
                         </StackPanel>
-                        
+                        <StackPanel Orientation="Horizontal"  Grid.Column="0" Height="18" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                            <TextBlock x:Name="Geo" FontSize="15" Text="unknown"/>
+                        </StackPanel>
                         <StackPanel Orientation="Horizontal"  Grid.Column="0" Height="18" VerticalAlignment="Bottom" HorizontalAlignment="Right">
                             <TextBlock x:Name="Resolution" FontSize="15" Text="0000x0000"/>
                         </StackPanel>

@@ -9,13 +9,17 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Microsoft.Devices;
+using Windows.Devices.Geolocation;
 using Microsoft.Xna.Framework.Media;
+using LocalD.Services;
 
 namespace LocalD
 {
     public partial class MainPage : PhoneApplicationPage
     {
-        private PhotoCamera myCam;
+        private PhotoCamera _myCam;
+        private Geolocator _loc;
+        private Geoposition _pos;
 
         public MainPage()
         {
@@ -25,19 +29,22 @@ namespace LocalD
 
             Status.Text = "Page loaded";
             Status.Text = "Checking if camera OK";
+
+            _loc = new Geolocator();
+
             if (PhotoCamera.IsCameraTypeSupported(CameraType.Primary))
             {
 
-                myCam = new PhotoCamera(CameraType.Primary);
+                _myCam = new PhotoCamera(CameraType.Primary);
                 Status.Text = "Camera OK!";
 
-                Resolution.Text = (myCam.Resolution.Width + "x" + myCam.Resolution.Height);
-                ViewfinderCanvas.Height = myCam.Resolution.Height;
-                ViewfinderCanvas.Width = myCam.Resolution.Width;
+                Resolution.Text = (_myCam.Resolution.Width + "x" + _myCam.Resolution.Height);
+                ViewfinderCanvas.Height = _myCam.Resolution.Height;
+                ViewfinderCanvas.Width = _myCam.Resolution.Width;
 
-                ViewfinderBrush.SetSource(myCam);
+                ViewfinderBrush.SetSource(_myCam);
                 //myCam.Initialized += cam_Initialized;
-                myCam.CaptureCompleted += myCam_CaptureCompleted;
+                _myCam.CaptureCompleted += myCam_CaptureCompleted;
             }
             else
             {
@@ -48,13 +55,13 @@ namespace LocalD
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-
+            Geo.Text = UserGeo.UserCity;
         }
         private void TakePhoto()
         {
             try
             {
-                myCam.CaptureImage();
+                _myCam.CaptureImage();
             }
             catch (Exception)
             {
@@ -73,7 +80,7 @@ namespace LocalD
         }
         private void myCam_CaptureCompleted(object sender, CameraOperationCompletedEventArgs e)
         {
-
+            //todo do stuff with photo
         }
         private void ApplicationBarIconButton_Settings_OnClick(object sender, EventArgs e)
         {

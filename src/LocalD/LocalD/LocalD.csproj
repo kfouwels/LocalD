@@ -231,6 +231,10 @@
       <Project>{210CCE24-D537-4C28-984B-130839480502}</Project>
       <Name>LocalD.Services</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LocalD.Templates\LocalD.Templates.csproj">
+      <Project>{34D5FA2B-3A0D-4AE3-A0A1-54B2E2041E8E}</Project>
+      <Name>LocalD.Templates</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />

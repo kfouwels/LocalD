@@ -24,7 +24,6 @@ namespace LocalD.Pages
 
             if (PhotoCamera.IsCameraTypeSupported(CameraType.Primary))
             {
-
                 myCam = new PhotoCamera(CameraType.Primary);
 
                 ViewfinderCanvas.Height = myCam.Resolution.Height;

@@ -5,38 +5,39 @@ using System.Net;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
-using LocalD.Services.Implementation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using LocalD.Services;
 
 namespace LocalD.Pages
 {
-    public partial class Page1 : PhoneApplicationPage
+    public partial class UserLogin : PhoneApplicationPage
     {
-        public Page1()
+        private UserGeo myUserGeo = new UserGeo();
+
+        public UserLogin()
         {
             InitializeComponent();
         }
 
-        private void UserSubmit_OnClick(object sender, RoutedEventArgs e)
+        private async void UserSubmit_OnClick(object sender, RoutedEventArgs e)
         {
-            //NavigationService.Navigate(new Uri("/Pages/MainHub.xaml", UriKind.Relative)); //DEBUG!
-
-            //display processing circle
-            Spinner.Visibility = Visibility.Visible;
-            SpinningAnimation.Begin();
-
-            //Validate Fields
+            ProgressBar.Visibility = Visibility.Visible;
             if (UserEmail.Text.Contains('@') && UserEmail.Text.Contains('.') && !string.IsNullOrEmpty(UserPwd.Password))
             {
-                //ILogin testLogin = new Login();
                 //todo login shit
                 //todo prevent going back to this page
 
-                //DEBUG
-                MessageBox.Show("For now this is overriding the login system", "DEBUG!!",
-                                MessageBoxButton.OK);
+                if (!await myUserGeo.UpdateGeoCity())
+                {
+                    ProgressBar.Visibility = Visibility.Collapsed;
+                    MessageBox.Show("Could not update Geolocation", "Error", MessageBoxButton.OK);
+                }
+                else
+                {
+                    ProgressBar.Visibility = Visibility.Collapsed;
+                }
+
                 NavigationService.Navigate(new Uri("/Pages/MainHub.xaml", UriKind.Relative));
 
             }
@@ -46,8 +47,7 @@ namespace LocalD.Pages
                                 MessageBoxButton.OK);
                 UserPwd.Password = "";
             }
-            Spinner.Visibility = Visibility.Collapsed;
-            SpinningAnimation.Stop();
+            ProgressBar.Visibility = Visibility.Collapsed;
         }
 
         private void ApplicationBarIconButton_help_OnClick(object sender, EventArgs e)
@@ -55,11 +55,6 @@ namespace LocalD.Pages
             MessageBox.Show(
                 "Earth that was could no longer sustain our numbers, we were so many. We found a new solar system, dozens of planets and hundreds of moons. Each one terraformed, a process taking decades, to support human life, to be new Earths. The Central Planets formed the Alliance. Ruled by an interplanetary parliament, the Alliance was a beacon of civilization. The savage outer planets were not so enlightened and refused Alliance control. The war was devastating, but the Alliance's victory over the Independents ensured a safer universe. And now everyone can enjoy the comfort and enlightenment of our civilization. ",
                 "Help", MessageBoxButton.OK);
-        }
-
-        private void ApplicationBarIconButton_OVERRIDELOGIN_OnClick(object sender, EventArgs e) //DEBUG!
-        {
-            NavigationService.Navigate(new Uri("/Pages/MainHub.xaml", UriKind.Relative));
         }
     }
 }
