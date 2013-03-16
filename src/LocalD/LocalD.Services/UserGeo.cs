@@ -10,16 +10,15 @@ namespace LocalD.Services
 {
     public class UserGeo
     {
-        public static string UserCity = "Geo Not updated";
+        public static Geoposition UserPos;
 
         public async Task<bool> UpdateGeoCity()
         {
             var loc = new Geolocator();
-
+            
             try
             {
-                Geoposition _pos = await loc.GetGeopositionAsync();
-                UserCity = _pos.CivicAddress.City;
+                UserPos = await loc.GetGeopositionAsync();
                 return true;
             }
             catch (Exception)

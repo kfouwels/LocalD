@@ -55,7 +55,7 @@ namespace LocalD
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            Geo.Text = UserGeo.UserCity;
+            Geo.Text = (UserGeo.UserPos.Coordinate.Latitude + " / " + UserGeo.UserPos.Coordinate.Longitude);
         }
         private void TakePhoto()
         {
