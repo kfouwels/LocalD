@@ -24,9 +24,9 @@ namespace LocalD.Services
             this.ApiKey = ApiKey;
         }
 
-        public void ApiLogin(string userPw, string userNm )
+        public async Task<LoginResponse> ApiLogin(string userPw, string userNm)
         {
-            throw new NotImplementedException();
+            var x = await HttpGet("user/register/" + "?key=" + ApiKey + "&username=" + userNm + "&password=" + userPw );
         }
 
         public async Task ApiReg(string userPw, string userNm, string userMail, string userTown)

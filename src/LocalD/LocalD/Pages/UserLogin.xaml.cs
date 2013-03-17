@@ -5,6 +5,7 @@ using System.Net;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
+using LocalD.Services;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 //using LocalD.Services;
@@ -19,23 +20,35 @@ namespace LocalD.Pages
             InitializeComponent();
         }
 
-        private void UserToLogin_OnClick(object sender, RoutedEventArgs e)
+        private async void UserToLogin_OnClick(object sender, RoutedEventArgs e)
         {
             ProgressBar.Visibility = Visibility.Visible;
-            if (!string.IsNullOrEmpty(UserUsername.Text) || !string.IsNullOrEmpty(UserPwd.Password))
+            var uapi = new UserApi("5940771a096a5bf6e36f530769a6ba2f");
+
+            if (string.IsNullOrEmpty(UserUsername.Text) || string.IsNullOrEmpty(UserPwd.Password))
             {
-                //todo save login info
-
-                NavigationService.Navigate(new Uri("/Pages/MainHub.xaml", UriKind.Relative));
-
+                ProgressBar.Visibility = Visibility.Collapsed;
+                UserPwd.Password = "";
+                MessageBox.Show(
+                    "The credentials entered are either blank or not in a valid format. Try again.",
+                    "User Error", MessageBoxButton.OK);
             }
             else
             {
-                MessageBox.Show("The credentials entered are either blank or not in a valid format. Try again.", "PEBKAC Error!",
-                                MessageBoxButton.OK);
-                UserPwd.Password = "";
+                try
+                {
+                    await uapi.ApiLogin(UserPwd.Password, UserUsername.Text);
+                    NavigationService.Navigate(new Uri("/Pages/MainHub.xaml", UriKind.Relative));
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("We could not sign you in at this time, please check details and try again.", ":(",
+                                    MessageBoxButton.OK);
+                }
+                
             }
-            ProgressBar.Visibility = Visibility.Collapsed;
+
+            
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)

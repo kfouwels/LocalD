@@ -37,14 +37,14 @@ namespace LocalD.Pages
                 !UserEmail.Text.Contains("."))
             {
                 MessageBox.Show(
-                    "One or more of he fields contains an invalid entry. Passwords must be between 3 and 20 alphanumeric characters",
+                    "One or more of he fields contains an invalid entry.\nPasswords must be between 3 and 20 alphanumeric characters",
                     "User Error", MessageBoxButton.OK);
             }
             else
             {
                 try
                 {
-                    await uapi.ApiReg(UserPwd.Password, UserUsername.Text, UserEmail.Text, UserTown.SelectedItem);
+                    await uapi.ApiReg(UserPwd.Password, UserUsername.Text, UserEmail.Text, UserTown.SelectedItem.ToString());
                     NavigationService.Navigate(new Uri("/Pages/UserLogin.xaml", UriKind.Relative));
 
                 }
