@@ -44,7 +44,7 @@ namespace LocalD.Pages
             {
                 try
                 {
-                    await uapi.ApiReg(UserPwd.Password, UserUsername.Text, UserEmail.Text, "reading");
+                    await uapi.ApiReg(UserPwd.Password, UserUsername.Text, UserEmail.Text, UserTown.SelectedItem);
                     NavigationService.Navigate(new Uri("/Pages/UserLogin.xaml", UriKind.Relative));
 
                 }
