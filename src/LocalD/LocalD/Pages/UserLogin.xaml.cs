@@ -51,6 +51,11 @@ namespace LocalD.Pages
             ProgressBar.Visibility = Visibility.Collapsed;
         }
 
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            NavigationService.RemoveBackEntry();
+        }
+
         private void UserToRegister_OnClick(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/Pages/UserRegister.xaml", UriKind.Relative));
