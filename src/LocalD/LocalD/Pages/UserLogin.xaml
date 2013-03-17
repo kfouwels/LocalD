@@ -43,11 +43,19 @@
         </StackPanel>
         
         <StackPanel Grid.Row="2" Grid.Column="1" Margin="30,0" Grid.RowSpan="3">
-            <TextBlock Text="LocalD registered Email"/>
-            <TextBox x:Name="UserEmail" BorderBrush="#2c3e50" Background="#30FFFFFF" InputScope="EmailSmtpAddress"/>
+            <TextBlock Text="Username"/>
+            <TextBox x:Name="UserUsername" BorderBrush="#2c3e50" Background="#30FFFFFF" MaxLength="20"/>
             <TextBlock Text="Password" />
-            <PasswordBox x:Name="UserPwd" BorderBrush="#2c3e50" Background="#30FFFFFF"/>
-            <Button Content="Login" x:Name="UserSubmit" Margin="0,25,0,0" BorderBrush="#2c3e50" Click="UserSubmit_OnClick" />
+            <PasswordBox x:Name="UserPwd" BorderBrush="#2c3e50" Background="#30FFFFFF" MaxLength="40"/>
+            
+            <Grid Margin="0,25,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Button Content="Login" x:Name="UserToRegister"  BorderBrush="#2c3e50" Click="UserToLogin_OnClick" Grid.Column ="0" />
+                <Button Content="Register" x:Name="UserToLogin"  BorderBrush="#2c3e50" Click="UserToRegister_OnClick" Grid.Column ="1" />
+            </Grid>
         </StackPanel>
         <ProgressBar x:Name="ProgressBar" IsIndeterminate="True" Grid.Column="1" Grid.Row="3" Visibility="Collapsed" />
     </Grid>

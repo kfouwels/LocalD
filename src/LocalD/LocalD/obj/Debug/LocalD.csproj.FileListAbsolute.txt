@@ -50,3 +50,4 @@ E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\
 E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\obj\Debug\Pages\CameraPage.g.cs
 E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\LocalD.Templates.dll
 E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\LocalD.Templates.pdb
+E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\obj\Debug\Pages\UserRegister.g.cs
