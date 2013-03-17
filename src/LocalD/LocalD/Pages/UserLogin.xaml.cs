@@ -7,13 +7,13 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-using LocalD.Services;
+//using LocalD.Services;
 
 namespace LocalD.Pages
 {
     public partial class UserLogin : PhoneApplicationPage
     {
-        private UserGeo myUserGeo = new UserGeo();
+        //private UserGeo myUserGeo = new UserGeo();
 
         public UserLogin()
         {
@@ -25,18 +25,18 @@ namespace LocalD.Pages
             ProgressBar.Visibility = Visibility.Visible;
             if (UserEmail.Text.Contains('@') && UserEmail.Text.Contains('.') && !string.IsNullOrEmpty(UserPwd.Password))
             {
-                //todo login shit
+                //todo login system -> api
                 //todo prevent going back to this page
 
-                if (!await myUserGeo.UpdateGeoCity())
-                {
-                    ProgressBar.Visibility = Visibility.Collapsed;
-                    MessageBox.Show("Could not update Geolocation", "Error", MessageBoxButton.OK);
-                }
-                else
-                {
-                    ProgressBar.Visibility = Visibility.Collapsed;
-                }
+                //if (!await myUserGeo.UpdateGeoCity())
+                //{
+                //    ProgressBar.Visibility = Visibility.Collapsed;
+                //    MessageBox.Show("Could not update Geolocation", "Error", MessageBoxButton.OK);
+                //}
+                //else
+                //{
+                //    ProgressBar.Visibility = Visibility.Collapsed;
+                //}
 
                 NavigationService.Navigate(new Uri("/Pages/MainHub.xaml", UriKind.Relative));
 

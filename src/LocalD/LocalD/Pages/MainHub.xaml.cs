@@ -43,7 +43,6 @@ namespace LocalD
                 ViewfinderCanvas.Width = _myCam.Resolution.Width;
 
                 ViewfinderBrush.SetSource(_myCam);
-                //myCam.Initialized += cam_Initialized;
                 _myCam.CaptureCompleted += myCam_CaptureCompleted;
             }
             else
@@ -78,9 +77,10 @@ namespace LocalD
         {
             TakePhoto();
         }
+
         private void myCam_CaptureCompleted(object sender, CameraOperationCompletedEventArgs e)
         {
-            //todo do stuff with photo
+            //todo do stuff when photo taken
         }
         private void ApplicationBarIconButton_Settings_OnClick(object sender, EventArgs e)
         {

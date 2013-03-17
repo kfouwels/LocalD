@@ -54,7 +54,7 @@ namespace LocalD.Pages
 
         private void myCam_CaptureCompleted(object sender, CameraOperationCompletedEventArgs e)
         {
-            //todo
+            //todo stuff when photo taken
         }
 
        
