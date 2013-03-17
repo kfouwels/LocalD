@@ -13,7 +13,6 @@ namespace LocalD.Pages
 {
     public partial class UserLogin : PhoneApplicationPage
     {
-        //private UserGeo myUserGeo = new UserGeo();
 
         public UserLogin()
         {
@@ -25,19 +24,7 @@ namespace LocalD.Pages
             ProgressBar.Visibility = Visibility.Visible;
             if (!string.IsNullOrEmpty(UserUsername.Text) || !string.IsNullOrEmpty(UserPwd.Password))
             {
-                //todo login system -> api
-                //todo prevent going back to this page
                 //todo save login info
-
-                //if (!await myUserGeo.UpdateGeoCity())
-                //{
-                //    ProgressBar.Visibility = Visibility.Collapsed;
-                //    MessageBox.Show("Could not update Geolocation", "Error", MessageBoxButton.OK);
-                //}
-                //else
-                //{
-                //    ProgressBar.Visibility = Visibility.Collapsed;
-                //}
 
                 NavigationService.Navigate(new Uri("/Pages/MainHub.xaml", UriKind.Relative));
 

@@ -51,11 +51,6 @@ namespace LocalD
                 Status.Text = "Camera ERROR!";
             }
         }
-
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            //Geo.Text = (UserGeo.UserPos.Coordinate.Latitude + " / " + UserGeo.UserPos.Coordinate.Longitude);
-        }
         private void TakePhoto()
         {
             try
@@ -67,6 +62,10 @@ namespace LocalD
                 MessageBox.Show("The camera couldn't take an image, please try again", "CaptureImage() failed",
                                 MessageBoxButton.OK);
             }
+        }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            NavigationService.RemoveBackEntry();
         }
         private void ApplicationBarIconButton_Photo_OnClick(object sender, EventArgs e)
         {
