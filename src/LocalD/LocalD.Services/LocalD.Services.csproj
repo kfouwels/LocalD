@@ -96,6 +96,19 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LocalD.Data\LocalD.Data.csproj">
+      <Project>{852D341C-A2B2-4D7E-A392-9B3E86AAF73D}</Project>
+      <Name>LocalD.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LocalD.Templates\LocalD.Templates.csproj">
+      <Project>{34D5FA2B-3A0D-4AE3-A0A1-54B2E2041E8E}</Project>
+      <Name>LocalD.Templates</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
   <ProjectExtensions />
