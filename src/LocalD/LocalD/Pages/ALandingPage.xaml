@@ -16,8 +16,9 @@
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="#2980b9">
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock FontSize="40" >Updating Towns</TextBlock>
-        <ProgressBar IsIndeterminate="True" Margin="0,8,0,0" Visibility="Visible" />
+            <TextBlock x:Name="status"  FontSize="40" TextAlignment="Center" >Status</TextBlock>
+            <ProgressBar IsIndeterminate="True" Margin="0,8,0,0" Visibility="Visible" />
+            <TextBlock x:Name="Description"  FontSize="14" TextAlignment="Center"></TextBlock>
         </StackPanel>
     </Grid>
 

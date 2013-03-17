@@ -16,21 +16,20 @@ namespace LocalD.Pages
         public UserRegister()
         {
             InitializeComponent();
-
-            UserTown.ItemsSource = Data.FilingCabinet.TownsList.Select(e => e.name);
-
+            if (Data.FilingCabinet.TownsList.Count != 0)
+            {
+                UserTown.ItemsSource = Data.FilingCabinet.TownsList.Select(e => e.name);
+            }
         }
-        private void UserToSubmit_OnClick(object sender, RoutedEventArgs e)
+        private async void UserToSubmit_OnClick(object sender, RoutedEventArgs e)
         {
 
             var uapi = new UserApi("5940771a096a5bf6e36f530769a6ba2f");
-            uapi.DownloadCompleted +=uapi_DownloadCompleted;
 
             //todo REGEX
             if (string.IsNullOrWhiteSpace(UserEmail.Text) ||
                 string.IsNullOrWhiteSpace(UserUsername.Text) ||
                 string.IsNullOrWhiteSpace(UserPwd.Password) ||
-                //!string.IsNullOrWhiteSpace(UserTown.Text) ||
                 !(UserPwd.Password.Length > 3) ||
                 !(UserUsername.Text.Length > 3) ||
                 !(UserEmail.Text.Length > 6) ||
@@ -43,17 +42,20 @@ namespace LocalD.Pages
             }
             else
             {
-                uapi.ApiReg(UserPwd.Password, UserUsername.Text, UserEmail.Text, "reading");
+                try
+                {
+                    await uapi.ApiReg(UserPwd.Password, UserUsername.Text, UserEmail.Text, "reading");
+                    NavigationService.Navigate(new Uri("/Pages/UserLogin.xaml", UriKind.Relative));
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("We could not sign you up at this time, please check details and try again.", ":(",
+                                    MessageBoxButton.OK);
+                }
+                
             }
         }
-
-        void uapi_DownloadCompleted(string returnValue)
-        {
-            MessageBox.Show(("You will now be returned to the main page to login\n API says" + returnValue), "Success!",
-                            MessageBoxButton.OK);
-            NavigationService.Navigate(new Uri("/Pages/UserLogin.xaml", UriKind.Absolute));
-        }
-
 
         private void ApplicationBarIconButton_help_OnClick(object sender, EventArgs e)
         {

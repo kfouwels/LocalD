@@ -83,7 +83,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="ApiResponses\TownResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FilingCabinet.cs" />
   </ItemGroup>

@@ -6,7 +6,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using LocalD.Data;
-using LocalD.Data.ApiResponses;
+using LocalD.Templates.ApiResponses;
 using Newtonsoft.Json;
 
 namespace LocalD.Services
@@ -29,27 +29,35 @@ namespace LocalD.Services
             throw new NotImplementedException();
         }
 
-        public void ApiReg(string userPw, string userNm, string userMail, string userTown)
+        public async Task ApiReg(string userPw, string userNm, string userMail, string userTown)
         {
 
-            throw new NotImplementedException();
+            await HttpGet("user/register/"  +
+                            "?key="         +   ApiKey + 
+                            "&username="    +   userNm + 
+                            "&password="    +   userPw + 
+                            "&email="       +   userMail + 
+                            "&town="        +   userTown
+                        );
 
         }
 
         public async Task ApiTown()
         {
-            FilingCabinet.TownsList =
-                JsonConvert.DeserializeObject<TownResponseRootObject>(await HttpGet("town/?key=" + ApiKey)).response;
+            FilingCabinet.TownsList = JsonConvert.DeserializeObject<TownResponseRootObject>(await HttpGet("town/?key=" + ApiKey)).response;
         }
 
         private async Task<string> HttpGet(string urlAppend)
         {
             var request = (HttpWebRequest)WebRequest.Create(baseUrl + urlAppend );
-            var response = (HttpWebResponse)await request.GetResponseAsync();
+            var response = await request.GetResponseAsync();
+
+            string temp;
 
             using (var stream = response.GetResponseStream())
             using (var reader = new StreamReader(stream))
-                return reader.ReadToEnd();
+                temp = reader.ReadToEnd();
+            return temp;
         }
     }
 }
