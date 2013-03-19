@@ -27,7 +27,8 @@ namespace LocalD.Pages
             var uapi = new UserApi("5940771a096a5bf6e36f530769a6ba2f");
             try
             {
-                await uapi.ApiTown();
+                FilingCabinet.TownsList = await uapi.ApiTown();
+
                 NavigationService.Navigate(new Uri("/Pages/UserLogin.xaml", UriKind.Relative));
             }
             catch (Exception ex)

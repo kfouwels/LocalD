@@ -14,10 +14,8 @@ namespace LocalD.Services
     public class UserApi
     {
         private readonly string ApiKey;
-        private const string baseUrl = "http://api.locald.co.uk/1/";
-
-        public delegate void DownloadCompleteDelegate(string returnValue);
-        public event DownloadCompleteDelegate DownloadCompleted;
+        private const string apiVersion = "1/";
+        private const string baseUrl = "http://api.locald.co.uk/";
 
         public UserApi(string ApiKey)
         {
@@ -26,30 +24,25 @@ namespace LocalD.Services
 
         public async Task<LoginResponse> ApiLogin(string userPw, string userNm)
         {
-            var x = await HttpGet("user/register/" + "?key=" + ApiKey + "&username=" + userNm + "&password=" + userPw );
+            var x = JsonConvert.DeserializeObject<LoginResponseRootObject>(await HttpGet("user/login/" + "?key=" + ApiKey + "&username=" + userNm + "&password=" + userPw )).response;
+            return x;
         }
 
-        public async Task ApiReg(string userPw, string userNm, string userMail, string userTown)
+        public async Task<RegisterResponse> ApiReg(string userPw, string userNm, string userMail, string userTown)
         {
-
-            await HttpGet("user/register/"  +
-                            "?key="         +   ApiKey + 
-                            "&username="    +   userNm + 
-                            "&password="    +   userPw + 
-                            "&email="       +   userMail + 
-                            "&town="        +   userTown
-                        );
-
+            var x = JsonConvert.DeserializeObject<RegisterResponseRootObject>(await HttpGet("user/register/" + "?key=" + ApiKey + "&username=" + userNm + "&password=" + userPw + "&email=" + userMail + "&town=" + userTown)).response;
+            return x;
         }
 
-        public async Task ApiTown()
+        public async Task<List<TownResponse>> ApiTown()
         {
-            FilingCabinet.TownsList = JsonConvert.DeserializeObject<TownResponseRootObject>(await HttpGet("town/?key=" + ApiKey)).response;
+            var x = JsonConvert.DeserializeObject<TownResponseRootObject>(await HttpGet("town/?key=" + ApiKey)).response;
+            return x;
         }
 
         private async Task<string> HttpGet(string urlAppend)
         {
-            var request = (HttpWebRequest)WebRequest.Create(baseUrl + urlAppend );
+            var request = (HttpWebRequest)WebRequest.Create(baseUrl + apiVersion + urlAppend );
             var response = await request.GetResponseAsync();
 
             string temp;

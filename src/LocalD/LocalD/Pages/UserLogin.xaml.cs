@@ -37,7 +37,7 @@ namespace LocalD.Pages
             {
                 try
                 {
-                    await uapi.ApiLogin(UserPwd.Password, UserUsername.Text);
+                    var y = await uapi.ApiLogin(UserPwd.Password, UserUsername.Text);
                     NavigationService.Navigate(new Uri("/Pages/MainHub.xaml", UriKind.Relative));
                 }
                 catch (Exception ex)

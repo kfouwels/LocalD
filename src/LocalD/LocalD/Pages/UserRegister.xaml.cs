@@ -8,6 +8,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using LocalD.Services;
+using LocalD.Data;
 
 namespace LocalD.Pages
 {
@@ -16,9 +17,9 @@ namespace LocalD.Pages
         public UserRegister()
         {
             InitializeComponent();
-            if (Data.FilingCabinet.TownsList.Count != 0)
+            if (FilingCabinet.TownsList.Count != 0)
             {
-                UserTown.ItemsSource = Data.FilingCabinet.TownsList.Select(e => e.name);
+                UserTown.ItemsSource = FilingCabinet.TownsList.Select(e => e.name);
             }
         }
         private async void UserToSubmit_OnClick(object sender, RoutedEventArgs e)
@@ -44,7 +45,7 @@ namespace LocalD.Pages
             {
                 try
                 {
-                    await uapi.ApiReg(UserPwd.Password, UserUsername.Text, UserEmail.Text, UserTown.SelectedItem.ToString());
+                    await uapi.ApiReg(UserPwd.Password, UserUsername.Text, UserEmail.Text, FilingCabinet.TownsList.Find(i => i.name == (UserTown.SelectedItem.ToString())).id);
                     NavigationService.Navigate(new Uri("/Pages/UserLogin.xaml", UriKind.Relative));
 
                 }

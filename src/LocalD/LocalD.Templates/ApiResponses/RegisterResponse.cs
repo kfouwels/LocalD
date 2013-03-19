@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 
 namespace LocalD.Templates.ApiResponses
 {
-    public class LoginResponse
+    public class RegisterResponse
     {
         public string success { get; set; }
-        public string consumerkey { get; set; }
-        public string consumersecret { get; set; }
     }
 
-    public class LoginResponseRootObject
+    public class RegisterResponseRootObject
     {
-        public LoginResponse response { get; set; }
+        public RegisterResponse response { get; set; }
     }
+
 }
