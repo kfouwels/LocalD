@@ -13,4 +13,5 @@ namespace LocalD.Data
         public static List<TownResponse> TownsList = new List<TownResponse>();
         public static UserCredentials CurrentUserCredentials = new UserCredentials();
     }
+    //todo dumping data to a json file in isolated storage
 }

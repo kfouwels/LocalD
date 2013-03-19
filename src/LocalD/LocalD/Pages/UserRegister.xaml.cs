@@ -39,15 +39,24 @@ namespace LocalD.Pages
             {
                 MessageBox.Show(
                     "One or more of he fields contains an invalid entry.\nPasswords must be between 3 and 20 alphanumeric characters",
-                    "User Error", MessageBoxButton.OK);
+                    ":(", MessageBoxButton.OK);
             }
             else
             {
                 try
                 {
-                    await uapi.ApiReg(UserPwd.Password, UserUsername.Text, UserEmail.Text, FilingCabinet.TownsList.Find(i => i.name == (UserTown.SelectedItem.ToString())).id);
-                    NavigationService.Navigate(new Uri("/Pages/UserLogin.xaml", UriKind.Relative));
+                    var y = await uapi.ApiReg(UserPwd.Password, UserUsername.Text, UserEmail.Text, FilingCabinet.TownsList.Find(i => i.name == (UserTown.SelectedItem.ToString())).id);
 
+                    if (y.success.Contains("Account created") || y.success.Contains("Account Created") || y.success.Contains("account created"))
+                    {
+                        MessageBox.Show("Registration successful. Account Created", ":)", MessageBoxButton.OK);
+
+                        NavigationService.Navigate(new Uri("/Pages/UserLogin.xaml", UriKind.Relative));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Registration unsuccessful.\nComputer says: " + y.success, ":(", MessageBoxButton.OK);
+                    }
                 }
                 catch (Exception ex)
                 {

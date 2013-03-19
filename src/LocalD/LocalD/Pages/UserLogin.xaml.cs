@@ -8,6 +8,7 @@ using System.Windows.Navigation;
 using LocalD.Services;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using LocalD.Data;
 //using LocalD.Services;
 
 namespace LocalD.Pages
@@ -31,14 +32,24 @@ namespace LocalD.Pages
                 UserPwd.Password = "";
                 MessageBox.Show(
                     "The credentials entered are either blank or not in a valid format. Try again.",
-                    "User Error", MessageBoxButton.OK);
+                    ":(", MessageBoxButton.OK);
             }
             else
             {
                 try
                 {
                     var y = await uapi.ApiLogin(UserPwd.Password, UserUsername.Text);
-                    NavigationService.Navigate(new Uri("/Pages/MainHub.xaml", UriKind.Relative));
+                    if (y.success.Contains("logged in") || y.success.Contains("Logged In"))
+                    {
+                        FilingCabinet.CurrentUserCredentials.consumerkey = y.consumerkey;
+                        FilingCabinet.CurrentUserCredentials.consumersecret = y.consumersecret;
+
+                        NavigationService.Navigate(new Uri("/Pages/MainHub.xaml", UriKind.Relative));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Login unsuccessful.\nComputer says: " + y.success, ":(", MessageBoxButton.OK);
+                    }
                 }
                 catch (Exception ex)
                 {

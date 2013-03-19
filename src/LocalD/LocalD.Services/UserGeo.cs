@@ -26,6 +26,5 @@
 //                return false;
 //            }
 //        }
-//        //todo co-oords to town
 //    }
 //}
