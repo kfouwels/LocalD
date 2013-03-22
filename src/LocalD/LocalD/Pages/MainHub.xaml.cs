@@ -8,7 +8,6 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Microsoft.Devices;
-using Windows.Devices.Geolocation;
 using Microsoft.Xna.Framework.Media;
 using LocalD.Services;
 using GestureEventArgs = System.Windows.Input.GestureEventArgs;
@@ -18,23 +17,16 @@ namespace LocalD
     public partial class MainPage : PhoneApplicationPage
     {
         private PhotoCamera _myCam;
-        private Geolocator _loc;
-        private Geoposition _pos;
 
         public MainPage()
         {
             InitializeComponent();
+            MainPano.DefaultItem = MainPano.Items[1];
 
             CameraButtons.ShutterKeyPressed += OnButtonFullPress;
 
-            Status.Text = "Page loaded";
-            Status.Text = "Checking if camera OK";
-
-            _loc = new Geolocator();
-
             if (PhotoCamera.IsCameraTypeSupported(CameraType.Primary))
             {
-
                 _myCam = new PhotoCamera(CameraType.Primary);
                 Status.Text = "Camera OK!";
 
@@ -69,7 +61,7 @@ namespace LocalD
         }
         private void ApplicationBarIconButton_Photo_OnClick(object sender, EventArgs e)
         {
-            TakePhoto();
+            NavigationService.Navigate(new Uri("/Pages/CameraPage.xaml", UriKind.Relative));
         }
 
         private void OnButtonFullPress(object sender, EventArgs e)
@@ -88,7 +80,7 @@ namespace LocalD
 
         private void CameraBox_Ontap(object sender, GestureEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/Pages/CameraPage.xaml", UriKind.Relative));
+            TakePhoto();
         }
 
         private void ApplicationBarIconButton_MainHelp_OnClick(object sender, EventArgs e)

@@ -46,9 +46,9 @@
         </Style>   
     </phone:PhoneApplicationPage.Resources>
     <Grid x:Name="LayoutRoot" Background="Transparent">
-        <phone:Panorama Title="LocalD" Background="#2980b9" Style="{StaticResource PanoramaStyle1}">
+        <phone:Panorama Title="LocalD" Background="#2980b9" Style="{StaticResource PanoramaStyle1}" x:Name="MainPano">
 
-            <phone:PanoramaItem>
+            <phone:PanoramaItem Name="Panel1" >
                 <Grid Margin="0,0,0,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="10"/>
@@ -78,7 +78,7 @@
                         </Border>
                     </Viewbox>
                     <TextBlock Style="{StaticResource PhoneTextNormalStyle}" TextAlignment="Center" VerticalAlignment="Center" Grid.Column="1"  Margin="0" Grid.Row="1"
-                                   Text="Tap the screen to expand viewfinder"/>
+                                   Text="Tap screen to capture"/>
                     <Grid Grid.Row="4" Grid.Column="1">
                         <StackPanel Orientation="Horizontal"  Grid.Column="0" Height="18" VerticalAlignment="Bottom" HorizontalAlignment="Left">
                             <TextBlock x:Name="Status" FontSize="15" Text="not set"/>
@@ -93,7 +93,13 @@
                 </Grid>
             </phone:PanoramaItem>
             
-            <phone:PanoramaItem Header="**Recent**" Orientation="Horizontal"/>
+            <phone:PanoramaItem Name="Panel2" Header="Sections">
+                
+            </phone:PanoramaItem>
+            
+            <phone:PanoramaItem Name="Panel3" Header="News" Orientation="Horizontal">
+                
+            </phone:PanoramaItem>
         </phone:Panorama>
     </Grid>
     

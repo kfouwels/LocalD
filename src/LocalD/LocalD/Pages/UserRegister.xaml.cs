@@ -20,6 +20,7 @@ namespace LocalD.Pages
         }
         private async void UserToSubmit_OnClick(object sender, RoutedEventArgs e)
         {
+            UserHasInputControl(false);
 
             var uapi = new UserApi("5940771a096a5bf6e36f530769a6ba2f");
 
@@ -61,6 +62,28 @@ namespace LocalD.Pages
                 }
                 
             }
+            UserHasInputControl(true);
+        }
+        private void UserHasInputControl(bool doThey)
+        {
+
+            if (doThey)
+            {
+                UserUsername.IsEnabled = true;
+                UserPwd.IsEnabled = true;
+                UserEmail.IsEnabled = true;
+                UserTown.IsEnabled = true;
+                UserRegisterSubmit.IsEnabled = true;
+            }
+            else
+            {
+                UserUsername.IsEnabled = false;
+                UserPwd.IsEnabled = false;
+                UserEmail.IsEnabled = false;
+                UserTown.IsEnabled = false;
+                UserRegisterSubmit.IsEnabled = false;
+            }
+
         }
 
         private void ApplicationBarIconButton_help_OnClick(object sender, EventArgs e)

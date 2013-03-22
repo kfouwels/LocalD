@@ -1,21 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Navigation;
 using LocalD.Services;
 using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
 using LocalD.Data;
-//using LocalD.Services;
 
 namespace LocalD.Pages
 {
     public partial class UserLogin : PhoneApplicationPage
     {
-
         public UserLogin()
         {
             InitializeComponent();
@@ -24,6 +17,8 @@ namespace LocalD.Pages
         private async void UserToLogin_OnClick(object sender, RoutedEventArgs e)
         {
             ProgressBar.Visibility = Visibility.Visible;
+            UserHasInputControl(false);
+            
             var uapi = new UserApi("5940771a096a5bf6e36f530769a6ba2f");
 
             if (string.IsNullOrEmpty(UserUsername.Text) || string.IsNullOrEmpty(UserPwd.Password))
@@ -55,11 +50,28 @@ namespace LocalD.Pages
                 {
                     MessageBox.Show("We could not sign you in at this time, please check details and try again.", ":(",
                                     MessageBoxButton.OK);
-                }
-                
+                } 
+            }
+           UserHasInputControl(true);
+        }
+        private void UserHasInputControl(bool doThey)
+        {
+            
+            if (doThey)
+            {
+                UserUsername.IsEnabled = true;
+                UserPwd.IsEnabled = true;
+                UserToLogin.IsEnabled = true;
+                UserToRegister.IsEnabled = true;
+            }
+            else
+            {
+                UserUsername.IsEnabled = false;
+                UserPwd.IsEnabled = false;
+                UserToLogin.IsEnabled = false;
+                UserToRegister.IsEnabled = false;
             }
 
-            
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
