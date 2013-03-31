@@ -28,9 +28,9 @@ namespace LocalD.Services
             return x;
         }
 
-        public async Task<RegisterResponse> ApiReg(string userPw, string userNm, string userMail, string userTown)
+        public async Task<RegisterResponse> ApiReg(string userPw, string userNm, string userMail, string userTownID)
         {
-            var x = JsonConvert.DeserializeObject<RegisterResponseRootObject>(await HttpGet("user/register/" + "?key=" + _apiKey + "&username=" + userNm + "&password=" + userPw + "&email=" + userMail + "&town=" + userTown)).response;
+            var x = JsonConvert.DeserializeObject<RegisterResponseRootObject>(await HttpGet("user/register/" + "?key=" + _apiKey + "&username=" + userNm + "&password=" + userPw + "&email=" + userMail + "&town=" + userTownID)).response;
             return x;
         }
 

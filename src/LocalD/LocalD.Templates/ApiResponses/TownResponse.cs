@@ -8,7 +8,7 @@ namespace LocalD.Templates.ApiResponses
         public string name { get; set; }
         public double lat { get; set; }
         public double lon { get; set; }
-        public int countyid { get; set; }
+        public string countyid { get; set; }
         public string keywords { get; set; }
     }
 
