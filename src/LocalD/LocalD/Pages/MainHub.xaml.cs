@@ -16,45 +16,45 @@ namespace LocalD
 {
     public partial class MainPage : PhoneApplicationPage
     {
-        private PhotoCamera _myCam;
+        //private PhotoCamera _myCam;
 
         public MainPage()
         {
             InitializeComponent();
             MainPano.DefaultItem = MainPano.Items[1];
 
-            CameraButtons.ShutterKeyPressed += OnButtonFullPress;
+            //CameraButtons.ShutterKeyPressed += OnButtonFullPress;
 
-            if (PhotoCamera.IsCameraTypeSupported(CameraType.Primary))
-            {
-                _myCam = new PhotoCamera(CameraType.Primary);
-                Status.Text = "Camera OK!";
+            //if (PhotoCamera.IsCameraTypeSupported(CameraType.Primary))
+            //{
+            //    _myCam = new PhotoCamera(CameraType.Primary);
+            //    Status.Text = "Camera OK!";
 
-                Resolution.Text = (_myCam.Resolution.Width + "x" + _myCam.Resolution.Height);
-                ViewfinderCanvas.Height = _myCam.Resolution.Height;
-                ViewfinderCanvas.Width = _myCam.Resolution.Width;
+            //    Resolution.Text = (_myCam.Resolution.Width + "x" + _myCam.Resolution.Height);
+            //    ViewfinderCanvas.Height = _myCam.Resolution.Height;
+            //    ViewfinderCanvas.Width = _myCam.Resolution.Width;
 
-                ViewfinderBrush.SetSource(_myCam);
-                _myCam.CaptureCompleted += myCam_CaptureCompleted;
-            }
-            else
-            {
-                MessageBox.Show("A Camera is not available on this device.", "Error!", MessageBoxButton.OK);
-                Status.Text = "Camera ERROR!";
-            }
+            //    ViewfinderBrush.SetSource(_myCam);
+            //    _myCam.CaptureCompleted += myCam_CaptureCompleted;
+            //}
+            //else
+            //{
+            //    MessageBox.Show("A Camera is not available on this device.", "Error!", MessageBoxButton.OK);
+            //    Status.Text = "Camera ERROR!";
+            //}
         }
-        private void TakePhoto()
-        {
-            try
-            {
-                _myCam.CaptureImage();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("The camera couldn't take an image, please try again", "CaptureImage() failed",
-                                MessageBoxButton.OK);
-            }
-        }
+        //private void TakePhoto()
+        //{
+        //    try
+        //    {
+        //        _myCam.CaptureImage();
+        //    }
+        //    catch (Exception)
+        //    {
+        //        MessageBox.Show("The camera couldn't take an image, please try again", "CaptureImage() failed",
+        //                        MessageBoxButton.OK);
+        //    }
+        //}
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             NavigationService.RemoveBackEntry();
@@ -64,24 +64,24 @@ namespace LocalD
             NavigationService.Navigate(new Uri("/Pages/CameraPage.xaml", UriKind.Relative));
         }
 
-        private void OnButtonFullPress(object sender, EventArgs e)
-        {
-            TakePhoto();
-        }
+        //private void OnButtonFullPress(object sender, EventArgs e)
+        //{
+        //    TakePhoto();
+        //}
 
-        private void myCam_CaptureCompleted(object sender, CameraOperationCompletedEventArgs e)
-        {
-            //todo do stuff when photo taken
-        }
+        //private void myCam_CaptureCompleted(object sender, CameraOperationCompletedEventArgs e)
+        //{
+        //    //todo do stuff when photo taken
+        //}
         private void ApplicationBarIconButton_Settings_OnClick(object sender, EventArgs e)
         {
             NavigationService.Navigate(new Uri("/Pages/Settings.xaml", UriKind.Relative));
         }
 
-        private void CameraBox_Ontap(object sender, GestureEventArgs e)
-        {
-            TakePhoto();
-        }
+        //private void CameraBox_Ontap(object sender, GestureEventArgs e)
+        //{
+        //    TakePhoto();
+        //}
 
         private void ApplicationBarIconButton_MainHelp_OnClick(object sender, EventArgs e)
         {

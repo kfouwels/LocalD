@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>Coding4Fun.Toolkit.Controls</id>
-    <version>2.0.2</version>
+    <version>2.0.5</version>
     <title>Coding4Fun Toolkit - Controls</title>
     <authors>Coding4Fun,  Clint Rutkas</authors>
     <owners>Coding4Fun,  Clint Rutkas</owners>
@@ -14,7 +14,7 @@
     <releaseNotes />
     <copyright />
     <language>en-US</language>
-    <tags>ccoding4fun silverlight winrt win8 phone wp7 wp8 metro xaml wp timespan picker toast round button message prompt color metroflow chat bubble</tags>
+    <tags>coding4fun silverlight winrt win8 phone wp7 wp8 metro xaml wp timespan picker toast round button message prompt color metroflow chat bubble</tags>
     <references>
       <reference file="Coding4Fun.Toolkit.Controls.dll" />
     </references>
