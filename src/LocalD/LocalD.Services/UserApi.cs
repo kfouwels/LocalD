@@ -19,7 +19,7 @@ namespace LocalD.Services
 
         public UserApi(string ApiKey)
         {
-            this._apiKey = ApiKey;
+            _apiKey = ApiKey;
         }
 
         public async Task<LoginResponse> ApiLogin(string userPw, string userNm)
