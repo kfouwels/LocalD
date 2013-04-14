@@ -1,0 +1,11 @@
+E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD.Services\Bin\Debug\LocalD.Services.dll
+E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD.Services\Bin\Debug\LocalD.Services.pdb
+E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD.Services\Bin\Debug\LocalD.Data.dll
+E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD.Services\Bin\Debug\LocalD.Templates.dll
+E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD.Services\Bin\Debug\Newtonsoft.Json.dll
+E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD.Services\Bin\Debug\LocalD.Data.pdb
+E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD.Services\Bin\Debug\LocalD.Templates.pdb
+E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD.Services\Bin\Debug\Newtonsoft.Json.xml
+E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD.Services\obj\Debug\LocalD.Services.csprojResolveAssemblyReference.cache
+E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD.Services\obj\Debug\LocalD.Services.dll
+E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD.Services\obj\Debug\LocalD.Services.pdb

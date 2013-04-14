@@ -33,7 +33,6 @@ namespace LocalD.Pages
             {
 
             }
-            
 
             status.Text = "Updating Towns";
             Description.Text = "";
@@ -50,7 +49,6 @@ namespace LocalD.Pages
                 Description.Text = ("Error accessing the LocalD services\nPlease check your network connection");
             }
 
-            
         }
     }
 }

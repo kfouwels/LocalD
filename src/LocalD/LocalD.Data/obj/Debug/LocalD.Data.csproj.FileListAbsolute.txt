@@ -1,0 +1,7 @@
+E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD.Data\Bin\Debug\LocalD.Data.dll
+E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD.Data\Bin\Debug\LocalD.Data.pdb
+E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD.Data\Bin\Debug\LocalD.Templates.dll
+E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD.Data\Bin\Debug\LocalD.Templates.pdb
+E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD.Data\obj\Debug\LocalD.Data.csprojResolveAssemblyReference.cache
+E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD.Data\obj\Debug\LocalD.Data.dll
+E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD.Data\obj\Debug\LocalD.Data.pdb

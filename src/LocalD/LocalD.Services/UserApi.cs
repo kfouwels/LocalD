@@ -40,6 +40,12 @@ namespace LocalD.Services
             return x;
         }
 
+        public async Task<NewsResponse> ApiNews(string townId)
+        {
+            var x = JsonConvert.DeserializeObject<NewsResponseRootObject>(await HttpGet("news/find" + "?key=" + _apiKey + "&town=" + townId)).response;
+            return x;
+        }
+
         private async Task<string> HttpGet(string urlAppend)
         {
             var request = (HttpWebRequest)WebRequest.Create(BaseUrl + ApiVersion + urlAppend );

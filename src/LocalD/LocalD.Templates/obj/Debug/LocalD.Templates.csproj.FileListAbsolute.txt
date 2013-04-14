@@ -1,0 +1,4 @@
+E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD.Templates\Bin\Debug\LocalD.Templates.dll
+E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD.Templates\Bin\Debug\LocalD.Templates.pdb
+E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD.Templates\obj\Debug\LocalD.Templates.dll
+E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD.Templates\obj\Debug\LocalD.Templates.pdb

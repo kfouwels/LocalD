@@ -84,6 +84,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="ApiResponses\LoginResponse.cs" />
+    <Compile Include="ApiResponses\NewsResponse.cs" />
     <Compile Include="ApiResponses\RegisterResponse.cs" />
     <Compile Include="ApiResponses\TownResponse.cs" />
     <Compile Include="AppDataTemp.cs" />

@@ -60,7 +60,6 @@ namespace LocalD.Pages
                     MessageBox.Show("We could not sign you up at this time, please check details and try again.", ":(",
                                     MessageBoxButton.OK);
                 }
-                
             }
             UserHasInputControl(true);
         }
