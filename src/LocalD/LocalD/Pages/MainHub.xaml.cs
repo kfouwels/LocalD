@@ -1,19 +1,14 @@
 ﻿using System;
-using System.Collections.ObjectModel;
-using System.Net;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Navigation;
 using LocalD.Data;
 using LocalD.Services;
-using LocalD.Templates;
 using LocalD.Templates.ApiResponses;
 using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
-using Microsoft.Devices;
+
+//todo expand articles
 
 namespace LocalD
 {
@@ -46,6 +41,11 @@ namespace LocalD
                 try
                 {
                     _newsFeed = await uapi.ApiNews(TempAppData.CurrentTown.id);
+                    foreach (var town in _newsFeed)
+                    {
+                        town.bodyClean = Regex.Replace(town.body, "<[^<]+?>", String.Empty);
+                        town.bodyCleanShort = (town.bodyClean.Substring(1, 200) + " ...");
+                    }
                 }
                 catch (Exception ex)
                 {

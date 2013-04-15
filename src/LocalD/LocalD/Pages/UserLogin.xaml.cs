@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Linq;
 using System.Windows;
 using System.Windows.Navigation;
+using LocalD.Data;
 using LocalD.Services;
 using Microsoft.Phone.Controls;
-using LocalD.Data;
 
 namespace LocalD.Pages
 {

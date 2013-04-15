@@ -9,6 +9,8 @@ namespace LocalD.Templates.ApiResponses
         public string id { get; set; }
         public string title { get; set; }
         public string body { get; set; }
+        public string bodyClean { get; set; }
+        public string bodyCleanShort { get; set; }
         public string slug { get; set; }
         public string user { get; set; }
         public string town { get; set; }

@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Diagnostics;
-using System.Resources;
 using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Navigation;
-using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
 using LocalD.Resources;
 using LocalD.ViewModels;
+using Microsoft.Phone.Controls;
+using Microsoft.Phone.Shell;
 
 namespace LocalD
 {
