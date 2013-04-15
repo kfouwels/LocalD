@@ -1,0 +1,77 @@
+﻿<!--<phone:PanoramaItem Name="Panel1" >
+                <Grid Margin="0,0,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="8*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="15"/>
+                    </Grid.RowDefinitions>
+                    
+                    <Viewbox x:Name="CameraViewbox" Grid.Column="1" Grid.Row="0" Stretch="Uniform" Tap="CameraBox_Ontap">
+                        <Border BorderBrush="#2c3e50" BorderThickness="1">
+                            <Canvas x:Name="ViewfinderCanvas" Grid.Column="1" Grid.Row="0" MaxWidth="300" MaxHeight="400">
+                                <Canvas.Background>
+                                    <VideoBrush x:Name="ViewfinderBrush">
+                                        <VideoBrush.RelativeTransform>
+                                            <CompositeTransform x:Name="ViewfinderTransform"
+                                                            CenterX="0.5"
+                                                            CenterY="0.5"
+                                                            Rotation="90"/>
+                                        </VideoBrush.RelativeTransform>
+                                    </VideoBrush>
+                                </Canvas.Background>
+                            </Canvas>
+                        </Border>
+                    </Viewbox>
+                    <TextBlock Style="{StaticResource PhoneTextNormalStyle}" TextAlignment="Center" VerticalAlignment="Center" Grid.Column="1"  Margin="0" Grid.Row="1"
+                                   Text="Tap screen to capture"/>
+                    <Grid Grid.Row="4" Grid.Column="1">
+                        <StackPanel Orientation="Horizontal"  Grid.Column="0" Height="18" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+                            <TextBlock x:Name="Status" FontSize="15" Text="not set"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal"  Grid.Column="0" Height="18" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                            <TextBlock x:Name="Geo" FontSize="15" Text="unknown"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal"  Grid.Column="0" Height="18" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                            <TextBlock x:Name="Resolution" FontSize="15" Text="0000x0000"/>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+            </phone:PanoramaItem>-->
+
+			//CameraButtons.ShutterKeyPressed += OnButtonFullPress;
+
+            //if (PhotoCamera.IsCameraTypeSupported(CameraType.Primary))
+            //{
+            //    _myCam = new PhotoCamera(CameraType.Primary);
+            //    Status.Text = "Camera OK!";
+
+            //    Resolution.Text = (_myCam.Resolution.Width + "x" + _myCam.Resolution.Height);
+            //    ViewfinderCanvas.Height = _myCam.Resolution.Height;
+            //    ViewfinderCanvas.Width = _myCam.Resolution.Width;
+
+            //    ViewfinderBrush.SetSource(_myCam);
+            //    _myCam.CaptureCompleted += myCam_CaptureCompleted;
+            //}
+            //else
+            //{
+            //    MessageBox.Show("A Camera is not available on this device.", "Error!", MessageBoxButton.OK);
+            //    Status.Text = "Camera ERROR!";
+            //}
+
+			//private void TakePhoto()
+        //{
+        //    try
+        //    {
+        //        _myCam.CaptureImage();
+        //    }
+        //    catch (Exception)
+        //    {
+        //        MessageBox.Show("The camera couldn't take an image, please try again", "CaptureImage() failed",
+        //                        MessageBoxButton.OK);
+        //    }
+        //}

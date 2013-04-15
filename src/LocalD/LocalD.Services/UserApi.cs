@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -28,21 +29,21 @@ namespace LocalD.Services
             return x;
         }
 
-        public async Task<RegisterResponse> ApiReg(string userPw, string userNm, string userMail, string userTownID)
+        public async Task<RegisterResponse> ApiReg(string userPw, string userNm, string userMail, string userTownId)
         {
-            var x = JsonConvert.DeserializeObject<RegisterResponseRootObject>(await HttpGet("user/register/" + "?key=" + _apiKey + "&username=" + userNm + "&password=" + userPw + "&email=" + userMail + "&town=" + userTownID)).response;
+            var x = JsonConvert.DeserializeObject<RegisterResponseRootObject>(await HttpGet("user/register/" + "?key=" + _apiKey + "&username=" + userNm + "&password=" + userPw + "&email=" + userMail + "&town=" + userTownId)).response;
             return x;
         }
 
-        public async Task<List<TownResponse>> ApiTown()
+        public async Task<List<TownItem>> ApiTown()
         {
             var x = JsonConvert.DeserializeObject<TownResponseRootObject>(await HttpGet("town/?key=" + _apiKey)).response;
             return x;
         }
 
-        public async Task<List<NewsResponse>> ApiNews(string townId)
+        public async Task<List<NewsItem>> ApiNews(string townId)
         {
-            var x = JsonConvert.DeserializeObject<NewsResponseRootObject>(await HttpGet("news/find" + "?key=" + _apiKey + "&town=" + townId)).response;
+            var x = JsonConvert.DeserializeObject<NewsResponseRootObject>(await HttpGet("news/find/" + "?key=" + _apiKey + "&town=" + townId)).response;
             return x;
         }
 

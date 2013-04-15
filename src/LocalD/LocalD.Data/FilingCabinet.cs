@@ -7,7 +7,7 @@ namespace LocalD.Data
 {
     public static class FilingCabinet
     {
-        public static List<TownResponse> TownsList = new List<TownResponse>();
+        public static List<TownItem> TownsList = new List<TownItem>();
         public static UserCredentials CurrentUserCredentials = new UserCredentials();
         public static Geoposition UserPos;
     }

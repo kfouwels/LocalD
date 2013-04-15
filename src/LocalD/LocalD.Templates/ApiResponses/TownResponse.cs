@@ -2,7 +2,7 @@
 
 namespace LocalD.Templates.ApiResponses
 {
-    public class TownResponse
+    public class TownItem
     {
         public string id { get; set; }
         public string name { get; set; }
@@ -14,6 +14,6 @@ namespace LocalD.Templates.ApiResponses
 
     public class TownResponseRootObject
     {
-        public List<TownResponse> response { get; set; }
+        public List<TownItem> response { get; set; }
     }
 }

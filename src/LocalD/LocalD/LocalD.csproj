@@ -207,6 +207,7 @@
     <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
+    <Content Include="zSnippets.txt" />
     <Resource Include="Assets\LoginBackground.png" />
     <Resource Include="Assets\Panorama[main]Background.png" />
     <Content Include="Assets\ApplicationIcon.png">
