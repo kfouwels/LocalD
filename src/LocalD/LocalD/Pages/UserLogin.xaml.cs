@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows;
 using System.Windows.Navigation;
 using LocalD.Services;
@@ -36,8 +37,11 @@ namespace LocalD.Pages
                     var y = await uapi.ApiLogin(UserPwd.Password, UserUsername.Text);
                     if (y.success.Contains("logged in") || y.success.Contains("Logged In"))
                     {
-                        FilingCabinet.CurrentUserCredentials.consumerkey = y.consumerkey;
-                        FilingCabinet.CurrentUserCredentials.consumersecret = y.consumersecret;
+                        FilingCabinet.CurrentUserCredentials.Consumerkey = y.consumerkey;
+                        FilingCabinet.CurrentUserCredentials.Consumersecret = y.consumersecret;
+                        FilingCabinet.CurrentUserCredentials.UserTown = "514628d17fa6866d15000038"; //todo !DEBUG! NEEDS TO UPDATE
+
+                        TempAppData.CurrentTown = FilingCabinet.TownsList.Find(i => i.id == (FilingCabinet.CurrentUserCredentials.UserTown));
 
                         NavigationService.Navigate(new Uri("/Pages/MainHub.xaml", UriKind.Relative));
                     }

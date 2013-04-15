@@ -34,7 +34,7 @@
                             <Primitives:PanningBackgroundLayer x:Name="BackgroundLayer" HorizontalAlignment="Left" Grid.RowSpan="2">
                                 <Border x:Name="background" Background="{TemplateBinding Background}"/>
                             </Primitives:PanningBackgroundLayer>
-                            <Primitives:PanningTitleLayer x:Name="TitleLayer" CharacterSpacing="-35" ContentTemplate="{TemplateBinding TitleTemplate}" Content="{TemplateBinding Title}" FontSize="150" FontFamily="{StaticResource PhoneFontFamilyLight}" HorizontalAlignment="Left" Margin="10,-34,0,0" Grid.Row="0" Foreground="White"/>
+                            <Primitives:PanningTitleLayer x:Name="TitleLayer" CharacterSpacing="-35" ContentTemplate="{TemplateBinding TitleTemplate}" Content="{TemplateBinding Title}" FontSize="125" FontFamily="{StaticResource PhoneFontFamilyLight}" HorizontalAlignment="Left" Margin="10,-34,0,0" Grid.Row="0" Foreground="White"/>
                             <Primitives:PanningLayer x:Name="ItemsLayer" HorizontalAlignment="Left" Grid.Row="1">
                                 <ItemsPresenter x:Name="items"/>
                             </Primitives:PanningLayer>
@@ -45,28 +45,28 @@
         </Style>
     </phone:PhoneApplicationPage.Resources>
     <Grid x:Name="LayoutRoot" Background="Transparent">
-        <phone:Panorama Title="LocalD" Style="{StaticResource PanoramaStyle1}" x:Name="MainPano" >
+        <phone:Panorama Style="{StaticResource PanoramaStyle1}" x:Name="MainPano">
+            <phone:Panorama.Title>
+                <TextBlock x:Name="PanoramaTitle" Text="Town"/>
+            </phone:Panorama.Title>
             <!--<phone:Panorama.Background>
                 <ImageBrush Stretch="UniformToFill" ImageSource="/Assets/mainBG.jpg"/>
             </phone:Panorama.Background>-->
             <phone:Panorama.Background>
                 <SolidColorBrush Color="#2980b9"/>
             </phone:Panorama.Background>
-            <phone:PanoramaItem Name="Panelminus1" Header="Something">
+            <phone:PanoramaItem Name="Panelminus1" Header="Sections">
                 
-            </phone:PanoramaItem>
-            <phone:PanoramaItem Name="Panel0" Header="Sections">
-
             </phone:PanoramaItem>
 
             <phone:PanoramaItem Name="Panel1News" Header="News">
 
-                <ListBox x:Name="NewsFeedBox">
+                <ListBox x:Name="NewsFeedBox" Margin="17,-25,0,0">
                     <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel>
                                     <TextBlock Text="{Binding title}" FontSize="20"/>
-                                    <TextBlock Text="{Binding body}" FontSize="5"/>
+                                    <TextBlock Text="{Binding body}" FontSize="10"/>
                                 </StackPanel>
                             </DataTemplate>
                         </ListBox.ItemTemplate>

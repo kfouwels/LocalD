@@ -26,11 +26,14 @@ namespace LocalD
         public MainPage()
         {
             InitializeComponent();
+            PanoramaTitle.Text = TempAppData.CurrentTown.name;
+            RefreshNewsFeed();
             MainPano.DefaultItem = MainPano.Items[1];
         }
         
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            
             NavigationService.RemoveBackEntry();
         }
 
@@ -39,12 +42,10 @@ namespace LocalD
             if (_isUpdaterRunning == false)
             { 
                 _isUpdaterRunning = true;
-
-                const string tempTown = "514628d17fa6866d15000038"; //wigan
                 var uapi = new UserApi("5940771a096a5bf6e36f530769a6ba2f");
                 try
                 {
-                    _newsFeed = await uapi.ApiNews(tempTown);
+                    _newsFeed = await uapi.ApiNews(TempAppData.CurrentTown.id);
                 }
                 catch (Exception ex)
                 {

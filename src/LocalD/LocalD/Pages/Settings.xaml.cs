@@ -19,10 +19,6 @@ namespace LocalD.Pages
 		protected override void OnNavigatedTo(NavigationEventArgs e)
 		{
 
-			MessageBox.Show("Yada Yada Yada",
-			                "Nothing to see here! [yet]", MessageBoxButton.OK);
-
-
 		}
 	}
 }

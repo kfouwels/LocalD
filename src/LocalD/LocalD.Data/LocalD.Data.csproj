@@ -85,6 +85,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FilingCabinet.cs" />
+    <Compile Include="TempAppData.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LocalD.Templates\LocalD.Templates.csproj">

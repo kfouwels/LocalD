@@ -87,7 +87,6 @@
     <Compile Include="ApiResponses\NewsResponse.cs" />
     <Compile Include="ApiResponses\RegisterResponse.cs" />
     <Compile Include="ApiResponses\TownResponse.cs" />
-    <Compile Include="AppDataTemp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserCredentials.cs" />
   </ItemGroup>
