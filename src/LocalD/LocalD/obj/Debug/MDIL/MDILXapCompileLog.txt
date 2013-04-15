@@ -2,6 +2,8 @@ Compile filter specified.  Only the following files will be processed:
 e:\user1\skydrive\mydocs\dev\work\locald\locald-windows-phone\src\locald\locald\bin\debug\mdil\locald.dll
 Processing file: E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\MDIL\Coding4Fun.Toolkit.Controls.dll
 File E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\MDIL\Coding4Fun.Toolkit.Controls.dll is not in the compile filter. Skipping.
+Processing file: E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\MDIL\Google.WebAnalytics.dll
+File E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\MDIL\Google.WebAnalytics.dll is not in the compile filter. Skipping.
 Processing file: E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\MDIL\JeffWilcox.PhoneThemeManager.dll
 File E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\MDIL\JeffWilcox.PhoneThemeManager.dll is not in the compile filter. Skipping.
 Processing file: E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\MDIL\LocalD.Data.dll
@@ -18,11 +20,23 @@ Processing file: E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\s
 File E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\MDIL\LocalD.Services.dll is not in the compile filter. Skipping.
 Processing file: E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\MDIL\LocalD.Templates.dll
 File E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\MDIL\LocalD.Templates.dll is not in the compile filter. Skipping.
+Processing file: E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\MDIL\MC.Phone.Analytics.dll
+File E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\MDIL\MC.Phone.Analytics.dll is not in the compile filter. Skipping.
 Processing file: E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\MDIL\Microsoft.Phone.Controls.dll
 File E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\MDIL\Microsoft.Phone.Controls.dll is not in the compile filter. Skipping.
 Processing file: E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\MDIL\Microsoft.Phone.Controls.Toolkit.dll
 File E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\MDIL\Microsoft.Phone.Controls.Toolkit.dll is not in the compile filter. Skipping.
+Processing file: E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\MDIL\Microsoft.WebAnalytics.Behaviors.dll
+File E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\MDIL\Microsoft.WebAnalytics.Behaviors.dll is not in the compile filter. Skipping.
+Processing file: E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\MDIL\Microsoft.WebAnalytics.dll
+File E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\MDIL\Microsoft.WebAnalytics.dll is not in the compile filter. Skipping.
 Processing file: E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\MDIL\Newtonsoft.Json.dll
 File E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\MDIL\Newtonsoft.Json.dll is not in the compile filter. Skipping.
+Processing file: E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\MDIL\System.ComponentModel.Composition.dll
+File E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\MDIL\System.ComponentModel.Composition.dll is not in the compile filter. Skipping.
+Processing file: E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\MDIL\System.ComponentModel.Composition.Initialization.dll
+File E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\MDIL\System.ComponentModel.Composition.Initialization.dll is not in the compile filter. Skipping.
+Processing file: E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\MDIL\System.Windows.Interactivity.dll
+File E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\MDIL\System.Windows.Interactivity.dll is not in the compile filter. Skipping.
 Processing file: E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\MDIL\WMAppManifest.xml
 File E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\MDIL\WMAppManifest.xml is not in the compile filter. Skipping.

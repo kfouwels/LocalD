@@ -2,12 +2,19 @@
   <Deployment.Parts>
     <AssemblyPart x:Name="LocalD" Source="LocalD.dll" />
     <AssemblyPart x:Name="Coding4Fun.Toolkit.Controls" Source="Coding4Fun.Toolkit.Controls.dll" />
+    <AssemblyPart x:Name="Google.WebAnalytics" Source="Google.WebAnalytics.dll" />
     <AssemblyPart x:Name="JeffWilcox.PhoneThemeManager" Source="JeffWilcox.PhoneThemeManager.dll" />
     <AssemblyPart x:Name="LocalD.Data" Source="LocalD.Data.dll" />
     <AssemblyPart x:Name="LocalD.Services" Source="LocalD.Services.dll" />
     <AssemblyPart x:Name="LocalD.Templates" Source="LocalD.Templates.dll" />
+    <AssemblyPart x:Name="MC.Phone.Analytics" Source="MC.Phone.Analytics.dll" />
     <AssemblyPart x:Name="Microsoft.Phone.Controls" Source="Microsoft.Phone.Controls.dll" />
     <AssemblyPart x:Name="Microsoft.Phone.Controls.Toolkit" Source="Microsoft.Phone.Controls.Toolkit.dll" />
+    <AssemblyPart x:Name="Microsoft.WebAnalytics.Behaviors" Source="Microsoft.WebAnalytics.Behaviors.dll" />
+    <AssemblyPart x:Name="Microsoft.WebAnalytics" Source="Microsoft.WebAnalytics.dll" />
     <AssemblyPart x:Name="Newtonsoft.Json" Source="Newtonsoft.Json.dll" />
+    <AssemblyPart x:Name="System.ComponentModel.Composition" Source="System.ComponentModel.Composition.dll" />
+    <AssemblyPart x:Name="System.ComponentModel.Composition.Initialization" Source="System.ComponentModel.Composition.Initialization.dll" />
+    <AssemblyPart x:Name="System.Windows.Interactivity" Source="System.Windows.Interactivity.dll" />
   </Deployment.Parts>
 </Deployment>

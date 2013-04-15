@@ -58,3 +58,10 @@ E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\
 E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\Newtonsoft.Json.dll
 E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\Newtonsoft.Json.xml
 E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\Properties\WMAppManifest.xml
+E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\Google.WebAnalytics.dll
+E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\MC.Phone.Analytics.dll
+E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\Microsoft.WebAnalytics.Behaviors.dll
+E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\Microsoft.WebAnalytics.dll
+E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\System.ComponentModel.Composition.dll
+E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\System.ComponentModel.Composition.Initialization.dll
+E:\User1\SkyDrive\MyDocs\dev\Work\LocalD\locald-windows-phone\src\LocalD\LocalD\Bin\Debug\System.Windows.Interactivity.dll
